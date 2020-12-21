@@ -14,7 +14,6 @@ defmodule OrderParser.Orders do
 
     customer_data = params["buyer"]
     contact_data = customer_data["phone"]
-    # require IEx; IEx.pry()
 
     customer =
       %{}
@@ -48,8 +47,8 @@ defmodule OrderParser.Orders do
         Addresses.address_dt_order_create(params["shipping"]["date_created"])
       )
 
-    require IEx
-    IEx.pry()
+    # require IEx
+    # IEx.pry()
   end
 
   defp store_id(order, params) do
@@ -58,49 +57,3 @@ defmodule OrderParser.Orders do
     Map.put_new(order, "store_id", store_id)
   end
 end
-
-# "country": "BR",
-# "state": "SP",
-# "city": "Cidade de Testes",
-# "district": "Bairro Fake",
-# "street": "Rua de Testes Fake",
-# "complement": "galpao",
-# "latitude": -23.629037,
-# "longitude":  -46.712689,
-# "dtOrderCreate": "2019-06-27T19:59:08.251Z",
-# "postalCode": "85045020",
-# "number": "0",
-
-# "shipping": {
-#   "date_created": "2019-06-24T16:45:33.000-04:00",
-
-#   "receiver_address": {
-#     "street_name": "Rua Fake de Testes",
-#     "street_number": "3454",
-#     "zip_code": "85045020",
-#     "city": {
-#       "name": "Cidade de Testes"
-#     },
-#     "state": {
-#       "name": "São Paulo"
-#     },
-#     "country": {
-#       "id": "BR",
-#       "name": "Brasil"
-#     },
-#     "neighborhood": {
-#       "name": "Vila de Testes"
-#     },
-#     "latitude": -23.629037,
-#     "longitude": -46.712689,
-#     "receiver_phone": "41999999999"
-#   }
-
-# DateTime.to_iso8601(dt, :extended)
-# "2000-02-29T23:00:07-04:00"
-
-# DateTime.to_iso8601(dt)
-# "2000-02-29T23:00:07Z"
-
-# teste = {:ok, dt, b} = DateTime.from_iso8601
-# DateTime.to_iso8601(dt)
