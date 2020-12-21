@@ -1,5 +1,4 @@
 defmodule OrderParserWeb.FallbackController do
-
   use OrderParserWeb, :controller
 
   def call(conn, {:error, _reason}) do

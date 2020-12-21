@@ -1,7 +1,5 @@
 defmodule OrderParserWeb.OrderController do
-  
   use OrderParserWeb, :controller
-
 
   action_fallback OrderParserWeb.FallbackController
 
